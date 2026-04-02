@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&family=Playfair+Display:wght@700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', sans-serif;
+    --font-display: 'Playfair Display', serif;
+
+    /* Ultra-premium ocean palette */
+    --background: 224 50% 3%;
+    --foreground: 210 25% 94%;
+    --card: 222 44% 6%;
+    --card-foreground: 210 25% 94%;
+    --popover: 222 44% 6%;
+    --popover-foreground: 210 25% 94%;
+    --primary: 210 25% 94%;
+    --primary-foreground: 224 50% 3%;
+    --secondary: 222 38% 10%;
+    --secondary-foreground: 210 18% 65%;
+    --muted: 222 38% 8%;
+    --muted-foreground: 218 14% 44%;
+
+    /* Premium cyan-teal accent */
+    --accent: 186 100% 42%;
+    --accent-foreground: 224 50% 3%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 28% 11%;
+    --input: 222 28% 11%;
+    --ring: 186 100% 42%;
+    --radius: 0.875rem;
+
+    --chart-1: 186 100% 42%;
+    --chart-2: 210 80% 60%;
+    --chart-3: 160 65% 45%;
+    --chart-4: 280 60% 65%;
+    --chart-5: 35 90% 58%;
+
+    --timeline-spine: 220 30% 20%;
+    --timeline-node: 210 30% 75%;
+    --timeline-active: 191 91% 47%;
+    --timeline-transit: 220 30% 40%;
+
+    --safety-green: 142 72% 29%;
+    --safety-yellow: 45 93% 47%;
+    --safety-red: 0 72% 51%;
+
+    --sidebar-background: 222 45% 5%;
+    --sidebar-foreground: 210 30% 96%;
+    --sidebar-primary: 210 30% 96%;
+    --sidebar-primary-foreground: 222 45% 4%;
+    --sidebar-accent: 220 35% 10%;
+    --sidebar-accent-foreground: 210 30% 96%;
+    --sidebar-border: 220 30% 12%;
+    --sidebar-ring: 191 91% 47%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+}
