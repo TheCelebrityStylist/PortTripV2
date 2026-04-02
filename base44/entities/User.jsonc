@@ -1,0 +1,53 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "enum": [
+        "admin",
+        "user"
+      ],
+      "default": "user"
+    },
+    "plan_tier": {
+      "type": "string",
+      "enum": [
+        "free",
+        "cruise_pass",
+        "pro",
+        "ultimate"
+      ],
+      "default": "free",
+      "description": "Subscription tier"
+    },
+    "free_port_guides": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of port city names unlocked for free-tier users",
+      "default": []
+    },
+    "stripe_customer_id": {
+      "type": "string",
+      "description": "Stripe customer ID"
+    },
+    "stripe_subscription_id": {
+      "type": "string",
+      "description": "Active Stripe subscription ID"
+    },
+    "cruise_line": {
+      "type": "string",
+      "description": "User's cruise line (e.g. Royal Caribbean)"
+    },
+    "ship_name": {
+      "type": "string",
+      "description": "Ship name"
+    },
+    "booking_reference": {
+      "type": "string",
+      "description": "Booking/reservation reference"
+    }
+  }
+}
