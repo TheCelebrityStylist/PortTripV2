@@ -310,11 +310,16 @@ function TimelineView({ blocks, isLoading, plan, onDelete, onAiRefine }) {
   if (blocks.length === 0) return (
     <div className="flex flex-col items-center justify-center py-24 gap-4 text-center">
       <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center">
-        <Sparkles className="w-8 h-8 text-accent" />
+        <Sparkles className="w-8 h-8 text-accent animate-pulse" />
       </div>
       <div>
-        <p className="text-base font-bold text-foreground mb-1">Your itinerary will appear here</p>
-        <p className="text-sm text-muted-foreground max-w-xs">Use the AI assistant to build your perfect port day in seconds.</p>
+        <p className="text-base font-bold text-foreground mb-1">Generating your {plan?.port_city} plan…</p>
+        <p className="text-sm text-muted-foreground max-w-xs">AI is building your time-stamped port day. This takes about 15–30 seconds.</p>
+      </div>
+      <div className="flex gap-1.5 mt-2">
+        {[0, 0.15, 0.3].map(d => (
+          <div key={d} className="w-2 h-2 rounded-full bg-accent/60 animate-bounce" style={{ animationDelay: `${d}s` }} />
+        ))}
       </div>
     </div>
   );
@@ -660,6 +665,22 @@ export default function Planner() {
       });
     }
   }, [cityParam]);
+
+  // Auto-generate when an existing plan is loaded with zero blocks
+  const autoGenForPlan = useRef(new Set());
+  useEffect(() => {
+    if (
+      plan &&
+      activePlanId &&
+      !isLoading &&
+      !generating &&
+      blocks.length === 0 &&
+      !autoGenForPlan.current.has(activePlanId)
+    ) {
+      autoGenForPlan.current.add(activePlanId);
+      autoGenerate(plan);
+    }
+  }, [plan, activePlanId, isLoading, blocks.length, generating]);
 
   const createBlock = useMutation({
     mutationFn: (data) => base44.entities.PlanBlock.create(data),
