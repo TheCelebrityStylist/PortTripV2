@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import CruiseImportModal from '../components/cruise/CruiseImportModal';
 import { cn } from '@/lib/utils';
 import { toast } from 'sonner';
 
@@ -349,10 +350,16 @@ function CruisePanel({ cruise, onEdit, onDelete }) {
 // ─── Main Dashboard ───────────────────────────────────────────────────────────
 export default function Dashboard() {
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
   const [addOpen, setAddOpen] = useState(false);
   const [editCruise, setEditCruise] = useState(null);
   const [selectedId, setSelectedId] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  const handleSinglePort = ({ city, allAboard, buffer, tender }) => {
+    const params = new URLSearchParams({ city, allAboard: allAboard || '17:00', buffer: String(buffer || 90), tender: String(!!tender) });
+    navigate(`/planner?${params.toString()}`);
+  };
 
   const { data: cruises = [], isLoading } = useQuery({
     queryKey: ['cruises'],
@@ -364,10 +371,56 @@ export default function Dashboard() {
 
   const createCruise = useMutation({
     mutationFn: (data) => base44.entities.Cruise.create(data),
-    onSuccess: (created) => {
+    onSuccess: async (created) => {
       queryClient.invalidateQueries({ queryKey: ['cruises'] });
       setSelectedId(created.id);
-      toast.success('Cruise created!');
+      toast.success('Cruise added! Generating starter plans…');
+      // Auto-create and auto-generate PortDayPlan for each port stop
+      if (created.ports?.length) {
+        const updatedPorts = [];
+        for (const port of created.ports) {
+          try {
+            const plan = await base44.entities.PortDayPlan.create({
+              port_city: port.city,
+              all_aboard_time: port.all_aboard_time || '17:00',
+              buffer_minutes: 90,
+              tender_delay_minutes: port.tender ? 30 : 0,
+              travel_mode: 'first_time',
+              status: 'planning',
+              ai_generated: false,
+            });
+            updatedPorts.push({ ...port, plan_id: plan.id });
+            // Kick off auto-generation in background
+            base44.functions.invoke('plannerEngine', {
+              action: 'build_full_itinerary',
+              plan: { port_city: port.city, all_aboard_time: port.all_aboard_time || '17:00', buffer_minutes: 90, tender_delay_minutes: port.tender ? 30 : 0, travel_mode: 'first_time', group_type: 'couple', budget_mode: 'mid_range', id: plan.id },
+            }).then(async (res) => {
+              const planResult = res?.data?.plan;
+              if (!planResult?.journey?.length) return;
+              for (let i = 0; i < planResult.journey.length; i++) {
+                const j = planResult.journey[i];
+                await base44.entities.PlanBlock.create({
+                  trip_id: plan.id,
+                  block_type: j.type === 'transport' ? 'transit' : j.type === 'arrival' ? 'arrival' : j.type === 'departure' ? 'departure' : 'stop',
+                  title: j.title, subtitle: j.subtitle || '', location: j.area || '',
+                  duration_minutes: j.durationMin || 0, transport_mode: j.mode || '',
+                  cost_estimate: j.estimatedCostEur || 0, order_index: i,
+                  notes: j.why || j.instruction || '', insider_tip: j.insiderTip || '',
+                  google_maps_query: j.title ? `${j.title} ${port.city}` : '',
+                  status: 'planned',
+                  color_tag: JSON.stringify({ stopScore: j.stopScore, worthItScore: j.worthItScore, touristTrapRisk: j.touristTrapRisk, alternatives: j.alternatives || [], journeyType: j.type, instruction: j.instruction, whyThisMode: j.whyThisMode }),
+                });
+              }
+              await base44.entities.PortDayPlan.update(plan.id, { ai_generated: true, status: 'ready' });
+            }).catch(() => {});
+          } catch (_) {
+            updatedPorts.push(port);
+          }
+        }
+        await base44.entities.Cruise.update(created.id, { ports: updatedPorts });
+        queryClient.invalidateQueries({ queryKey: ['cruises'] });
+        toast.success(`${created.ports.length} port days queued for AI planning!`);
+      }
     },
   });
 
@@ -427,7 +480,7 @@ export default function Dashboard() {
             </div>
           </motion.div>
         </div>
-        <CruiseDialog open={addOpen} onOpenChange={setAddOpen} onSave={(d) => createCruise.mutate(d)} />
+        <CruiseImportModal open={addOpen} onOpenChange={setAddOpen} onSaveCruise={(d) => createCruise.mutate(d)} onSinglePort={handleSinglePort} />
       </div>
     );
   }
@@ -514,7 +567,7 @@ export default function Dashboard() {
       </div>
 
       {/* Dialogs */}
-      <CruiseDialog open={addOpen} onOpenChange={setAddOpen} onSave={(d) => createCruise.mutate(d)} />
+      <CruiseImportModal open={addOpen} onOpenChange={setAddOpen} onSaveCruise={(d) => createCruise.mutate(d)} onSinglePort={handleSinglePort} />
       {editCruise && (
         <CruiseDialog
           open={!!editCruise}
