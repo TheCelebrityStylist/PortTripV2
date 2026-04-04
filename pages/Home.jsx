@@ -254,7 +254,7 @@ function PaywallTeaser() {
             <Zap className="w-4 h-4" /> Unlock my perfect day
           </Button>
         </Link>
-        <p className="text-xs text-muted-foreground mt-3">Cruise Pass €9.99 · Pro €12.99/mo</p>
+        <p className="text-xs text-muted-foreground mt-3">Cruise Pass €12.99 · Pro €14.99/mo</p>
       </div>
     </div>
   );
@@ -718,7 +718,7 @@ export default function Home() {
                 <Zap className="w-6 h-6" /> Build my perfect port day
               </Button>
             </Link>
-            <p className="text-sm text-muted-foreground mt-5">Cruise Pass €9.99 · Pro €12.99/mo · Cancel anytime</p>
+            <p className="text-sm text-muted-foreground mt-5">Cruise Pass €12.99 · Pro €14.99/mo · Cancel anytime</p>
           </motion.div>
         </div>
       </section>
