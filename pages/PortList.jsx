@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { Search, Anchor, ArrowLeft, MapPin, ChevronRight, Sparkles, Globe, Lock } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
+import { getAllPortsAsEntities } from '@/utils/portRegistry';
 
 const FLAG_MAP = {
   no: '🇳🇴', es: '🇪🇸', it: '🇮🇹', fr: '🇫🇷', gr: '🇬🇷', hr: '🇭🇷',
@@ -22,7 +23,16 @@ export default function PortList() {
 
   const { data: ports = [], isLoading } = useQuery({
     queryKey: ['cruisePorts', 'all'],
-    queryFn: () => base44.entities.CruisePort.list('city', 500),
+    queryFn: async () => {
+      try {
+        const dbPorts = await base44.entities.CruisePort.list('city', 500);
+        // Fall back to curated registry if DB is empty
+        if (!dbPorts || dbPorts.length === 0) return getAllPortsAsEntities();
+        return dbPorts;
+      } catch {
+        return getAllPortsAsEntities();
+      }
+    },
   });
 
   const { data: userAccessData } = useQuery({
