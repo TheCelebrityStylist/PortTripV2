@@ -291,7 +291,7 @@ export const PORT_REGISTRY = {
     ],
     food: [
       { name: 'Albert Cuyp Market', area: 'De Pijp', type: 'market', tip: 'Amsterdam\'s best street market — stroopwafels, Dutch cheese, raw herring. Free entry, open Mon–Sat.', cost: 10 },
-      { name: 'Brouwerij 't IJ windmill brewery', area: 'Funenkade', type: 'bar', tip: 'Artisan beers brewed inside a working 18th century windmill. 50ml tasters, remarkable setting.', cost: 12 },
+      { name: "Brouwerij 't IJ windmill brewery", area: 'Funenkade', type: 'bar', tip: 'Artisan beers brewed inside a working 18th century windmill. 50ml tasters, remarkable setting.', cost: 12 },
     ],
     hiddenGems: ['Begijnhof — hidden medieval courtyard of peace in the middle of the city', 'NDSM wharf — industrial art scene, huge murals, ferry from Central Station (free)'],
     touristTraps: ['Red Light District coffee shops — for most cruise guests, a wasted hour', 'Canal boat tours near Centraal — skip, just walk the canals'],
@@ -454,6 +454,106 @@ export function resolvePort(cityName) {
     }
   }
   return null;
+}
+
+// ─── REGION MAP ──────────────────────────────────────────────────────────────
+const REGION_MAP = {
+  'Ireland': 'British Isles', 'United Kingdom': 'British Isles',
+  'Spain': 'Mediterranean', 'Greece': 'Mediterranean', 'Italy': 'Mediterranean',
+  'Croatia': 'Mediterranean', 'Portugal': 'Mediterranean', 'Malta': 'Mediterranean',
+  'France': 'Mediterranean', 'Montenegro': 'Mediterranean', 'Turkey': 'Mediterranean',
+  'Denmark': 'Northern Europe', 'Netherlands': 'Northern Europe',
+  'Norway': 'Northern Europe', 'Sweden': 'Northern Europe', 'Finland': 'Northern Europe',
+  'Iceland': 'Northern Europe', 'Germany': 'Northern Europe',
+  'Bahamas': 'Caribbean', 'Mexico': 'Caribbean', 'United States': 'Caribbean',
+  'Barbados': 'Caribbean', 'Jamaica': 'Caribbean',
+};
+
+/**
+ * Transform a PORT_REGISTRY entry into a CruisePort entity shape
+ * compatible with PortList and PortGuide components.
+ */
+export function toCruisePortShape(entry) {
+  const region = REGION_MAP[entry.country] || entry.country;
+
+  // Attraction highlights → markdown
+  const attrMd = entry.attractions?.map(a => {
+    const dur = a.duration || a.dur;
+    const lines = [
+      `### ${a.name}`,
+      `*${a.area || region}* · ${dur}min · ~€${a.cost}`,
+      '',
+      a.why,
+    ];
+    if (a.tip) lines.push('', `> 💡 **Insider tip:** ${a.tip}`);
+    return lines.join('\n');
+  }).join('\n\n---\n\n') || '';
+
+  // Food → markdown
+  const foodMd = entry.food?.map(f => {
+    return [
+      `### ${f.name}`,
+      f.area ? `*${f.area}*` : '',
+      '',
+      f.tip,
+      '',
+      `**Typical cost:** ${f.price || ('~€' + f.cost)}`,
+    ].filter(l => l !== '').join('\n');
+  }).join('\n\n---\n\n') || '';
+
+  // Hidden gems → markdown
+  const gemsMd = entry.hiddenGems?.map(g => {
+    if (typeof g === 'string') return `- ${g}`;
+    return `**${g.name}**: ${g.instruction}`;
+  }).join('\n') || '';
+
+  // Safety / return
+  const safetyParts = [];
+  const safeReturn = entry.safeReturnNote || entry.safeReturn;
+  if (safeReturn) safetyParts.push(`### Safe Return to Ship\n${safeReturn}`);
+  const traps = entry.traps || entry.touristTraps;
+  if (traps?.length) {
+    safetyParts.push(`### Tourist Traps to Avoid\n${traps.map(t => `- ⚠️ ${t}`).join('\n')}`);
+  }
+
+  // Description
+  const topAttractions = entry.attractions?.slice(0, 3).map(a => a.name).join(', ') || '';
+  const tenderNote = entry.portType === 'tender'
+    ? ` **Important:** This is a tender port — allow an extra ${entry.tenderMinDefault || 30} minutes each way for the tender boat transfer.`
+    : '';
+  const description = `${entry.displayName} is one of the most popular cruise destinations in ${entry.country}. Top highlights include ${topAttractions}.${tenderNote}`;
+
+  // Cost estimates
+  const shipCost = entry.shipVsDiy || 99;
+  const diyCost = entry.avgDiy || (entry.typicalCosts
+    ? Math.round(Object.values(entry.typicalCosts).reduce((a, b) => a + b, 0))
+    : 40);
+
+  return {
+    id: entry.slug,
+    city: entry.displayName,
+    country_code: entry.countryCode,
+    region,
+    description,
+    transport_port_to_city: entry.transferNotes,
+    attraction_highlights: attrMd,
+    local_food: foodMd,
+    unique_experiences: gemsMd,
+    safety_security: safetyParts.join('\n\n'),
+    tender_port: entry.portType === 'tender',
+    avg_ship_excursion_price: shipCost,
+    avg_diy_cost: diyCost,
+    typical_docking_hours: Math.round((entry.defaultBufferMin || 480) / 60),
+    _fromRegistry: true,
+  };
+}
+
+/**
+ * Get all ports in the registry as CruisePort entity shapes.
+ * Use this as a fallback when the DB returns no port data.
+ */
+export function getAllPortsAsEntities() {
+  return Object.values(PORT_REGISTRY).map(toCruisePortShape);
 }
 
 /**
