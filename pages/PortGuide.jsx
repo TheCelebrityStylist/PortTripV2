@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import PortCommunityWidget from '../components/PortCommunityWidget';
 import { cachePortGuide, getCachedPortGuide, isOffline } from '../utils/offlineCache';
 import { cleanHtml } from '../utils/cleanContent';
+import { resolvePort, toCruisePortShape } from '../utils/portRegistry';
 import {
   ArrowLeft, MapPin, Utensils, Star, Shield, Bus, Clock, Anchor, Sparkles,
   ChevronDown, ChevronUp, Zap, AlertTriangle, CheckCircle, Info,
@@ -240,9 +241,17 @@ export default function PortGuide() {
         const cached = getCachedPortGuide(decodedCity);
         if (cached) return [cached];
       }
-      return base44.entities.CruisePort.list('city', 200).then(all =>
-        all.filter(p => p.city?.toLowerCase() === decodedCity.toLowerCase())
-      );
+      try {
+        const all = await base44.entities.CruisePort.list('city', 200);
+        const match = all.filter(p => p.city?.toLowerCase() === decodedCity.toLowerCase());
+        if (match.length > 0) return match;
+      } catch {
+        // fall through to registry
+      }
+      // Fall back to curated registry
+      const registryEntry = resolvePort(decodedCity);
+      if (registryEntry) return [toCruisePortShape(registryEntry)];
+      return [];
     },
   });
 
@@ -252,8 +261,16 @@ export default function PortGuide() {
   const { data: accessData, isLoading: accessLoading } = useQuery({
     queryKey: ['portAccess', decodedCity],
     queryFn: async () => {
-      const res = await base44.functions.invoke('unlockPortGuide', { port_city: decodedCity, check_only: true });
-      return res.data;
+      try {
+        const res = await base44.functions.invoke('unlockPortGuide', { port_city: decodedCity, check_only: true });
+        return res.data;
+      } catch {
+        // If backend is unreachable, grant access to registry-sourced ports
+        // so users can at least browse the curated content
+        const registryEntry = resolvePort(decodedCity);
+        if (registryEntry) return { access: true, freeUsed: 0, freeLimit: 3 };
+        return { access: false, freeUsed: 0, freeLimit: 3 };
+      }
     },
     enabled: !!decodedCity,
     retry: false,
