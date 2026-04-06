@@ -31,6 +31,7 @@ import PortIntelligencePanel from '../components/PortIntelligencePanel';
 import TransportHub from '../components/TransportHub';
 import PortMap from '../components/PortMap';
 import { cachePlan, getCachedPlan, isOffline } from '../utils/offlineCache';
+import { invokePlanner } from '../utils/plannerApi';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'sonner';
@@ -391,16 +392,9 @@ function AiChatPanel({ plan, blocks, onAcceptStop, refineStop, onClearRefine, cr
     setMessages(newMsgs);
     setLoading(true);
 
-    const result = await base44.functions.invoke('portChat', {
-      mode: 'chat',
-      messages: newMsgs.map(m => ({ role: m.role, content: m.content })),
-      plan: { ...plan, current_stops: blocks.map(b => b.title).join(', ') },
-      context: cruisePort
-        ? 'PORT DB for ' + (plan?.port_city || '') + ': transport_port_to_city=' + (cruisePort.transport_port_to_city || '').slice(0, 600) +
-          ' | safety=' + (cruisePort.safety_security || '').slice(0, 400) +
-          ' | food=' + (cruisePort.local_food || '').slice(0, 400) +
-          ' | hidden_gems=' + (cruisePort.unique_experiences || '').slice(0, 400)
-        : '',
+    const result = await invokePlanner({
+      action: 'build_full_itinerary',
+      plan: { ...plan, current_stops: blocks.map(b => b.title).join(', '), userRequest: content },
     });
 
     const data = result?.data;
@@ -738,7 +732,7 @@ export default function Planner() {
 
       // Fallback: use plannerEngine with generate_variants for rich multi-variant output
       if (!planResult || !planResult.stops?.length) {
-        const result = await base44.functions.invoke('plannerEngine', { action: 'generate_variants', plan: planData });
+        const result = await invokePlanner({ action: 'generate_variants', plan: planData });
         const engineVariants = result?.data?.variants || [];
         if (engineVariants.length > 0) {
           setPlanVariants(engineVariants);
@@ -746,7 +740,7 @@ export default function Planner() {
           planResult = engineVariants[0];
         } else {
           // Final fallback: single plan
-          const singleResult = await base44.functions.invoke('plannerEngine', { action: 'build_full_itinerary', plan: planData });
+          const singleResult = await invokePlanner({ action: 'build_full_itinerary', plan: planData });
           planResult = singleResult?.data?.plan;
         }
       }
