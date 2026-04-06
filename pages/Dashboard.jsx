@@ -15,6 +15,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import CruiseImportModal from '../components/cruise/CruiseImportModal';
+import { invokePlanner } from '../utils/plannerApi';
 import { cn } from '@/lib/utils';
 import { toast } from 'sonner';
 
@@ -390,8 +391,8 @@ export default function Dashboard() {
               ai_generated: false,
             });
             updatedPorts.push({ ...port, plan_id: plan.id });
-            // Kick off auto-generation in background
-            base44.functions.invoke('plannerEngine', {
+            // Kick off auto-generation in background via Vercel API
+            invokePlanner({
               action: 'build_full_itinerary',
               plan: { port_city: port.city, all_aboard_time: port.all_aboard_time || '17:00', buffer_minutes: 90, tender_delay_minutes: port.tender ? 30 : 0, travel_mode: 'first_time', group_type: 'couple', budget_mode: 'mid_range', id: plan.id },
             }).then(async (res) => {
