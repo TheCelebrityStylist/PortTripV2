@@ -4,7 +4,7 @@
  */
 import { useState, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { base44 } from '@/api/base44Client';
+import { invokeParser, invokeParserUpload } from '../../utils/plannerApi';
 import { format, addDays, parseISO } from 'date-fns';
 import {
   Upload, ClipboardPaste, PenLine, Anchor, Ship, X, Check, Plus,
@@ -89,11 +89,11 @@ function UploadFlow({ onParsed, onBack }) {
 
   const process = async (file) => {
     setState('uploading');
-    const { file_url } = await base44.integrations.Core.UploadFile({ file });
-    setState('parsing');
-    const res = await base44.functions.invoke('parseItinerary', { fileUrl: file_url, fileType: file.name.split('.').pop() });
-    if (res?.data?.result) {
-      onParsed(res.data.result);
+    // File OCR not yet active — prompt to paste instead
+    const res = await invokeParserUpload();
+    if (res?.data?.stub) {
+      toast.info(res.data.message || 'Please paste your itinerary text instead');
+      setState('idle');
     } else {
       toast.error('Could not parse file — try pasting the text instead');
       setState('idle');
@@ -156,11 +156,15 @@ function PasteFlow({ onParsed, onBack }) {
   const parse = async () => {
     if (!text.trim()) return;
     setLoading(true);
-    const res = await base44.functions.invoke('parseItinerary', { text });
-    if (res?.data?.result) {
-      onParsed(res.data.result);
-    } else {
-      toast.error('Could not extract itinerary — please check your text');
+    try {
+      const res = await invokeParser({ text });
+      if (res?.data?.result) {
+        onParsed(res.data.result);
+      } else {
+        toast.error('Could not extract itinerary — please check your text or build manually');
+      }
+    } catch {
+      toast.error('Parse failed — please build manually');
     }
     setLoading(false);
   };
