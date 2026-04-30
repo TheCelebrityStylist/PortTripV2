@@ -4,7 +4,8 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "start": "npx tsx --env-file=.env agent.ts"
+    "start": "npx tsx --env-file=.env agent.ts",
+    "campaign": "npx tsx --env-file=.env create-campaign.ts"
   },
   "keywords": [],
   "author": "",
