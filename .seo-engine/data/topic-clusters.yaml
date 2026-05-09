@@ -1,0 +1,234 @@
+last_updated: "2026-05-09"
+
+# NOTE: Pillar pages are marked status: "pending_serp_research"
+# Before writing any pillar, ask the user to search Google for the pillar keyword
+# and provide: top 5 results, People Also Ask questions, related searches.
+
+clusters:
+
+  - cluster_id: "tc_port_day_planning"
+    name: "Cruise Port Day Planning"
+    description: "Everything about planning an independent port day on a cruise — from building an itinerary to not missing the ship"
+
+    pillar:
+      title: "The Complete Guide to Planning a Cruise Port Day"
+      target_keyword: "cruise port day planning"
+      slug: "cruise-port-day-planning"
+      status: "pending_serp_research"
+      blog_slug: ""
+      notes: "Before writing: ask user to Google 'cruise port day planning' and share top 5 results, PAA, related searches."
+
+    cluster_pages:
+      - title: "How to Plan a Cruise Port Day Step by Step"
+        target_keyword: "how to plan a cruise port day"
+        slug: "how-to-plan-cruise-port-day"
+        angle: "Step-by-step walkthrough using PortTrip — from setting all-aboard time to confirming the plan"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "How to Never Miss Your Cruise Ship at Port"
+        target_keyword: "how to not miss your cruise ship"
+        slug: "never-miss-cruise-ship-port"
+        angle: "Addresses cruisers' #1 fear with practical framework: buffer time, safety timer, port alerts — plus real stories"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "What to Do at a Cruise Port: Making the Most of Your Day"
+        target_keyword: "what to do in port cruise"
+        slug: "what-to-do-cruise-port"
+        angle: "Decision framework for first-timers — ship tour vs DIY vs hybrid — with port type breakdowns"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "Cruise Port Day Tips Every Cruiser Should Know"
+        target_keyword: "cruise port day tips"
+        slug: "cruise-port-day-tips"
+        angle: "Listicle of 15+ actionable tips sourced from experienced cruisers — not generic travel advice"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "How Tender Ports Work: What Cruisers Need to Know"
+        target_keyword: "tender port cruise guide"
+        slug: "tender-port-cruise-guide"
+        angle: "Explains tender logistics and how to factor tender delay into your port day plan"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "The Best Cruise Port Day Itinerary Template"
+        target_keyword: "cruise port day itinerary template"
+        slug: "cruise-port-day-itinerary"
+        angle: "Provides a structured template + shows how AI can fill it in 30 seconds"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "What to Pack for a Cruise Port Day"
+        target_keyword: "cruise packing list by port"
+        slug: "cruise-port-day-packing-list"
+        angle: "Packing list that adapts by port type (beach, city, culture) and activity — not a generic 'cruise packing list'"
+        status: "planned"
+        blog_slug: ""
+
+    linking_rules:
+      - "Every cluster page MUST link to pillar (cruise-port-day-planning)"
+      - "Pillar MUST link to all published cluster pages"
+      - "Cluster pages MAY cross-link when directly relevant"
+
+  - cluster_id: "tc_diy_excursions"
+    name: "DIY Cruise Shore Excursions"
+    description: "Why and how to skip ship excursions and plan your own — saving money without sacrificing the experience"
+
+    pillar:
+      title: "DIY Cruise Shore Excursions: The Complete Guide"
+      target_keyword: "cruise excursion alternatives"
+      slug: "diy-cruise-shore-excursions"
+      status: "pending_serp_research"
+      blog_slug: ""
+      notes: "Before writing: ask user to Google 'cruise excursion alternatives' and share top 5 results, PAA, related searches."
+
+    cluster_pages:
+      - title: "How to Skip Ship Excursions and Save €85 Per Port"
+        target_keyword: "skip ship excursion save money"
+        slug: "skip-ship-excursions-save-money"
+        angle: "Real savings calculation using PortTrip's Budget Intelligence — with port-by-port examples"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "DIY vs Ship Excursion: Which Is Right for You?"
+        target_keyword: "diy cruise shore excursions"
+        slug: "diy-vs-ship-excursion"
+        angle: "Honest comparison covering safety, flexibility, cost, and experience quality — not just 'DIY is always better'"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "How to Budget for a Cruise Port Day"
+        target_keyword: "cruise budget tips save money"
+        slug: "cruise-port-day-budget"
+        angle: "Practical budgeting framework by port type and group size — with real expense examples"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "Best Alternatives to Cruise Ship Excursion Companies"
+        target_keyword: "cruise excursion booking alternatives"
+        slug: "cruise-excursion-booking-alternatives"
+        angle: "Compares booking options (Viator, GetYourGuide, DIY, PortTrip) with honest pros/cons for each"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "Is It Safe to Skip Ship Excursions?"
+        target_keyword: "is it safe to skip cruise ship excursions"
+        slug: "safe-to-skip-ship-excursions"
+        angle: "Addresses the safety fear head-on with real-world risk assessment and how buffer time protects you"
+        status: "planned"
+        blog_slug: ""
+
+    linking_rules:
+      - "Every cluster page MUST link to pillar (diy-cruise-shore-excursions)"
+      - "Pillar MUST link to all published cluster pages"
+      - "Cross-link to tc_port_day_planning pillar where relevant"
+
+  - cluster_id: "tc_ai_planning"
+    name: "AI Cruise Planning Tools"
+    description: "Using AI to plan cruise port days — comparisons, how-tos, and tool reviews"
+
+    pillar:
+      title: "The Best AI Tools for Cruise Planning in 2026"
+      target_keyword: "AI cruise itinerary planner"
+      slug: "ai-cruise-planning-tools"
+      status: "pending_serp_research"
+      blog_slug: ""
+      notes: "Before writing: ask user to Google 'AI cruise itinerary planner' and share top 5 results, PAA, related searches."
+
+    cluster_pages:
+      - title: "Using ChatGPT to Plan a Cruise Port Day: Does It Work?"
+        target_keyword: "ChatGPT cruise planning"
+        slug: "chatgpt-cruise-planning"
+        angle: "Honest test of ChatGPT for cruise port planning — what it does well and where cruise-specific tools win"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "PortTrip vs ChatGPT for Cruise Port Planning"
+        target_keyword: "PortTrip vs ChatGPT"
+        slug: "porttrip-vs-chatgpt"
+        angle: "Side-by-side comparison on: cruise context, all-aboard awareness, offline access, safety features"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "Best Cruise Port Day Apps in 2026"
+        target_keyword: "best cruise port day apps"
+        slug: "best-cruise-port-day-apps"
+        angle: "Roundup of actual apps with honest scoring — PortTrip mentioned with its genuine strengths"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "Best Offline Cruise Planning Apps"
+        target_keyword: "offline cruise planner app"
+        slug: "offline-cruise-planning-apps"
+        angle: "Focused on apps that work without internet — critical for ports with poor connectivity"
+        status: "planned"
+        blog_slug: ""
+
+    linking_rules:
+      - "Every cluster page MUST link to pillar (ai-cruise-planning-tools)"
+      - "Pillar MUST link to all published cluster pages"
+      - "Comparison posts MUST link to tc_diy_excursions pillar"
+
+  - cluster_id: "tc_port_guides"
+    name: "Cruise Port Guides"
+    description: "Destination-specific guides for the most popular cruise ports worldwide"
+
+    pillar:
+      title: "Mediterranean Cruise Ports: The Complete Guide"
+      target_keyword: "Mediterranean cruise port guide"
+      slug: "mediterranean-cruise-ports-guide"
+      status: "pending_serp_research"
+      blog_slug: ""
+      notes: "Before writing: ask user to Google 'Mediterranean cruise port guide' and share top 5 results, PAA, related searches."
+
+    cluster_pages:
+      - title: "Barcelona Cruise Port: What to Do on Your Own"
+        target_keyword: "Barcelona cruise port guide"
+        slug: "barcelona-cruise-port-guide"
+        angle: "Independent traveler's guide with real timing from the port — not a generic 'top things to do in Barcelona' article"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "Santorini Cruise Port: DIY Day Guide"
+        target_keyword: "Santorini cruise port guide"
+        slug: "santorini-cruise-port-guide"
+        angle: "Covers the infamous cable car wait and tender port logistics — critical info that generic guides miss"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "Dubrovnik Cruise Port Tips: Beat the Crowds"
+        target_keyword: "Dubrovnik cruise port tips"
+        slug: "dubrovnik-cruise-port-tips"
+        angle: "Crowd avoidance strategy for Dubrovnik — timing, routes, and what ship tour groups miss"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "Caribbean Cruise Ports: Best DIY Experiences"
+        target_keyword: "Caribbean cruise port guide"
+        slug: "caribbean-cruise-ports-diy"
+        angle: "Multi-island guide comparing DIY potential port-by-port in the Caribbean"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "Kotor Cruise Port: Montenegro Day Guide"
+        target_keyword: "Kotor cruise port guide"
+        slug: "kotor-cruise-port-guide"
+        angle: "Hidden gem port with walkable old town — easy DIY, no taxi needed"
+        status: "planned"
+        blog_slug: ""
+
+      - title: "Athens (Piraeus) Cruise Port: Full Day Guide"
+        target_keyword: "Piraeus cruise port Athens guide"
+        slug: "athens-piraeus-cruise-port-guide"
+        angle: "Metro vs taxi decision, Acropolis timing, and how to make it back in time"
+        status: "planned"
+        blog_slug: ""
+
+    linking_rules:
+      - "Every cluster page MUST link to pillar (mediterranean-cruise-ports-guide)"
+      - "Pillar MUST link to all published cluster pages"
+      - "All port guides MUST link to tc_port_day_planning pillar"
+      - "All port guides SHOULD link to tc_diy_excursions pillar"

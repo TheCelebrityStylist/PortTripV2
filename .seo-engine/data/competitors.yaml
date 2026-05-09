@@ -1,0 +1,281 @@
+last_updated: "2026-05-09"
+last_verified: "2026-05-09"
+
+competitors:
+  - id: "comp_chatgpt"
+    name: "ChatGPT"
+    website: "https://chatgpt.com"
+    category: "general AI assistant"
+    pricing_model: "freemium"
+    strengths: "Broad knowledge, conversational, free tier widely used"
+    weaknesses: "No cruise-specific context, no real-time port data, no safety timer, no all-aboard deadline awareness, no offline access, no pre-built port guides"
+    notes: "Many cruisers use ChatGPT to plan port days but get generic tourist info without cruise-specific logistics."
+
+  - id: "comp_diy_cruise_ports"
+    name: "DIY Cruise Ports"
+    website: "https://diycruiseports.com"
+    category: "cruise port guides / blog"
+    pricing_model: "unknown"
+    strengths: "Port-specific content, built for DIY cruisers"
+    weaknesses: "Not yet verified"
+    notes: "Not yet verified."
+
+  - id: "comp_cruiseportiq"
+    name: "CruisePortIQ"
+    website: "https://cruiseportiq.com"
+    category: "cruise port planning"
+    pricing_model: "unknown"
+    strengths: "Not yet verified"
+    weaknesses: "Not yet verified"
+    notes: "Not yet verified."
+
+feature_matrix:
+  - feature_id: "feat_ai_itinerary_generator"
+    our_project:
+      supported: true
+      details: "Generates full port day itinerary in ~30 seconds based on port, all-aboard time, group type, budget, and travel style"
+      tier: "free"
+    competitors:
+      comp_chatgpt:
+        supported: null
+        details: "Can generate itineraries but lacks cruise-specific context (all-aboard time, tender delays, buffer time)"
+        tier: "free"
+        confidence: "partial"
+        last_verified: "2026-05-09"
+      comp_diy_cruise_ports:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+      comp_cruiseportiq:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+
+  - feature_id: "feat_safety_timer"
+    our_project:
+      supported: true
+      details: "Built-in countdown to all-aboard deadline with buffer time configuration"
+      tier: "free"
+    competitors:
+      comp_chatgpt:
+        supported: null
+        details: "No — ChatGPT has no real-time timer features"
+        tier: "unknown"
+        confidence: "partial"
+        last_verified: "2026-05-09"
+      comp_diy_cruise_ports:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+      comp_cruiseportiq:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+
+  - feature_id: "feat_offline_access"
+    our_project:
+      supported: true
+      details: "Plans and port guides cached locally — works without internet at port"
+      tier: "paid"
+    competitors:
+      comp_chatgpt:
+        supported: null
+        details: "No — requires internet connection"
+        tier: "unknown"
+        confidence: "partial"
+        last_verified: "2026-05-09"
+      comp_diy_cruise_ports:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+      comp_cruiseportiq:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+
+  - feature_id: "feat_budget_intelligence"
+    our_project:
+      supported: true
+      details: "Side-by-side ship excursion vs DIY cost comparison with savings calculation"
+      tier: "free"
+    competitors:
+      comp_chatgpt:
+        supported: null
+        details: "Can estimate costs if prompted but no structured comparison tool or real pricing data"
+        tier: "unknown"
+        confidence: "partial"
+        last_verified: "2026-05-09"
+      comp_diy_cruise_ports:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+      comp_cruiseportiq:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+
+  - feature_id: "feat_port_guides"
+    our_project:
+      supported: true
+      details: "50+ curated port guides with AI-generated content, maps, and community tips"
+      tier: "freemium"
+    competitors:
+      comp_chatgpt:
+        supported: null
+        details: "Provides general tourist information but not structured port guides with cruise-specific logistics"
+        tier: "free"
+        confidence: "partial"
+        last_verified: "2026-05-09"
+      comp_diy_cruise_ports:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+      comp_cruiseportiq:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+
+  - feature_id: "feat_share_plan"
+    our_project:
+      supported: true
+      details: "Shareable link — companions can view plan without account"
+      tier: "free"
+    competitors:
+      comp_chatgpt:
+        supported: null
+        details: "ChatGPT has conversation sharing but no structured plan view"
+        tier: "unknown"
+        confidence: "partial"
+        last_verified: "2026-05-09"
+      comp_diy_cruise_ports:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+      comp_cruiseportiq:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+
+  - feature_id: "feat_pdf_export"
+    our_project:
+      supported: true
+      details: "Full itinerary exported as PDF"
+      tier: "paid"
+    competitors:
+      comp_chatgpt:
+        supported: null
+        details: "No native PDF export"
+        tier: "unknown"
+        confidence: "partial"
+        last_verified: "2026-05-09"
+      comp_diy_cruise_ports:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+      comp_cruiseportiq:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+
+  - feature_id: "feat_ai_packing_list"
+    our_project:
+      supported: true
+      details: "AI generates port-specific packing list based on planned activities and group"
+      tier: "free"
+    competitors:
+      comp_chatgpt:
+        supported: null
+        details: "Can generate packing lists but not contextually linked to a specific port day plan"
+        tier: "free"
+        confidence: "partial"
+        last_verified: "2026-05-09"
+      comp_diy_cruise_ports:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+      comp_cruiseportiq:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+
+  - feature_id: "feat_tender_delay_config"
+    our_project:
+      supported: true
+      details: "Configurable tender delay built into timing calculations"
+      tier: "free"
+    competitors:
+      comp_chatgpt:
+        supported: null
+        details: "No — no awareness of tender ports or tender delay logistics"
+        tier: "unknown"
+        confidence: "partial"
+        last_verified: "2026-05-09"
+      comp_diy_cruise_ports:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+      comp_cruiseportiq:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+
+  - feature_id: "feat_cruise_pass"
+    our_project:
+      supported: true
+      details: "€12.99 one-time per cruise — no subscription"
+      tier: "paid"
+    competitors:
+      comp_chatgpt:
+        supported: null
+        details: "ChatGPT offers subscription (ChatGPT Plus ~$20/mo) or free tier"
+        tier: "freemium"
+        confidence: "verified"
+        last_verified: "2026-05-09"
+      comp_diy_cruise_ports:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""
+      comp_cruiseportiq:
+        supported: null
+        details: ""
+        tier: "unknown"
+        confidence: "unverified"
+        last_verified: ""

@@ -1,0 +1,29 @@
+# Blog Frontmatter Template — PortTrip
+# CMS: custom React SPA — Markdown files in content/blog/
+# RULES: title ≤ 60 chars | description ≤ 160 chars | slug ≤ 5 words (kebab-case)
+
+template: |
+  ---
+  title: ""              # MAX 60 chars. Primary keyword near front. No clickbait.
+  description: ""        # MAX 160 chars. Include primary keyword. CTA-adjacent.
+  date: "YYYY-MM-DD"
+  slug: ""               # MAX 5 words, kebab-case. Match primary keyword closely.
+  author: "The PortTrip Team"
+  category: ""           # One of: planning, budget, destinations, tools, tips
+  tags: []               # 3-6 tags. Include primary keyword, port name if applicable.
+  image: ""              # /images/blog/{slug}-hero.jpg — 1200x630px recommended
+  draft: true            # Set to false only after human review
+  excerpt: ""            # 1-2 sentences for blog listing pages. Can differ from description.
+  cluster_id: ""         # tc_ ID from topic-clusters.yaml
+  content_type: ""       # pillar | cluster | supporting | standalone
+  ---
+
+examples:
+  good_title: "How to Plan a Cruise Port Day in 7 Steps"   # 44 chars ✓
+  bad_title: "The Ultimate Comprehensive Guide to Planning Your Perfect Cruise Port Day Adventure"  # 83 chars ✗
+
+  good_description: "Learn how to plan a cruise port day independently — itinerary, transport, budget, and how to never miss your ship. Free planner included."  # 139 chars ✓
+  bad_description: "This is a complete guide about planning a cruise port day that covers everything you need to know about how to do it properly with tips."  # 137 chars but vague ✗
+
+  good_slug: "how-to-plan-cruise-port-day"     # 5 words ✓
+  bad_slug: "the-complete-ultimate-guide-to-planning-your-cruise-port-day-in-2026"   # too long ✗

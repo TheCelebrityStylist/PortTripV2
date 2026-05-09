@@ -1,0 +1,109 @@
+# SEO Content Engine — Project Configuration
+# Auto-generated 2026-05-09. Edit anything here anytime — Claude Code reads this before every task.
+
+project:
+  name: "PortTrip"
+  tagline: "Plan your cruise port day in 30 seconds"
+  description: "AI-powered cruise port day planner that generates full itineraries, covers 50+ ports worldwide, and saves cruisers an average of €85 vs ship excursions."
+  website: "https://porttrip.app"
+  target_audience:
+    primary: "cruise passengers planning independent port day trips"
+    secondary: "frequent cruisers, cruise travel bloggers, cruise line customers looking for alternatives to ship excursions"
+    technical_level: "beginner"
+
+author:
+  name: "The PortTrip Team"
+  title: ""
+  bio: ""
+  website: "https://porttrip.app"
+  social_links: {}
+
+# Trust signals — used for E-E-A-T in blogs
+trust_signals:
+  review_links:
+    g2: ""
+    trustpilot: ""
+    capterra: ""
+    product_hunt: ""
+    rightfeature: ""
+    canny: ""
+    other: []
+  testimonials: []
+  metrics:
+    - "50+ cruise ports covered worldwide"
+    - "€85 average saved per port vs ship excursions"
+    - "Full itinerary generated in 30 seconds"
+    - "4.9★ rating from 2,400+ cruisers"
+
+# CMS — React/Vite SPA (no built-in CMS)
+# Blog content should live as Markdown files in content/blog/
+cms:
+  type: "custom-react-spa"
+  blog_directory: "content/blog"
+  docs_directory: ""
+  frontmatter_format: "yaml"
+  date_format: "YYYY-MM-DD"
+  slug_style: "kebab-case"
+  slug_max_words: 5
+  image_directory: "public/images/blog"
+  frontmatter_schema:
+    required:
+      - title
+      - description
+      - date
+      - slug
+    optional:
+      - author
+      - tags
+      - category
+      - image
+      - draft
+      - excerpt
+
+competitors:
+  - name: "ChatGPT"
+    website: "https://chatgpt.com"
+    id: "comp_chatgpt"
+  - name: "DIY Cruise Ports"
+    website: "https://diycruiseports.com"
+    id: "comp_diy_cruise_ports"
+  - name: "CruisePortIQ"
+    website: "https://cruiseportiq.com"
+    id: "comp_cruiseportiq"
+
+seo:
+  primary_topics:
+    - "cruise port day planning"
+    - "cruise excursion alternatives"
+    - "DIY cruise ports"
+    - "port guides"
+    - "AI travel planning"
+  brand_terms:
+    - "PortTrip"
+    - "port trip"
+  avoid_terms: []
+  target_regions: ["Global", "Europe", "Caribbean", "Mediterranean"]
+  language: "en"
+
+content:
+  min_word_count: 1500
+  max_word_count: 4000
+  default_author: "The PortTrip Team"
+  tone: "friendly-expert"
+  include_faq: true
+  include_toc: true
+  cta_text: "Try PortTrip free"
+  cta_url: "https://porttrip.app"
+  max_posts_per_month: 8
+  requires_human_review: true
+
+technical_seo:
+  meta_description_max_chars: 160
+  title_tag_max_chars: 60
+  image_alt_text_required: true
+  canonical_url_pattern: "https://porttrip.app/blog/{slug}"
+
+integrations:
+  seo_tool: "none"
+  analytics: "none"
+  search_console: false

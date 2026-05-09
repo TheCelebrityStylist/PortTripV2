@@ -1,0 +1,25 @@
+keyword,search_volume,keyword_difficulty,cpc,intent,funnel_stage,serp_features,content_format_needed,mapped_feature_ids,mapped_blog_slugs,cluster_id,content_type,priority,status,last_updated,source,notes
+cruise port day planning,0,0,0,informational,awareness,,guide,"feat_ai_itinerary_generator,feat_journey_timeline",,tc_port_day_planning,pillar,high,planned,2026-05-09,seed,
+how to plan a cruise port day,0,0,0,informational,awareness,,how-to guide,"feat_ai_itinerary_generator,feat_safety_timer",,tc_port_day_planning,cluster,high,planned,2026-05-09,seed,
+cruise excursion alternatives,0,0,0,commercial,consideration,,comparison,"feat_budget_intelligence,feat_ai_itinerary_generator",,tc_diy_excursions,pillar,high,planned,2026-05-09,seed,
+diy cruise shore excursions,0,0,0,informational,consideration,,guide,"feat_budget_intelligence,feat_transport_hub",,tc_diy_excursions,cluster,high,planned,2026-05-09,seed,
+skip ship excursion save money,0,0,0,commercial,consideration,,comparison,"feat_budget_intelligence",,tc_diy_excursions,cluster,medium,planned,2026-05-09,seed,
+AI cruise itinerary planner,0,0,0,commercial,decision,,comparison/landing,"feat_ai_itinerary_generator,feat_ai_chat_planner",,tc_ai_planning,pillar,high,planned,2026-05-09,seed,
+ChatGPT cruise planning,0,0,0,informational,consideration,,comparison,"feat_ai_itinerary_generator",,tc_ai_planning,cluster,high,planned,2026-05-09,seed,
+PortTrip vs ChatGPT,0,0,0,commercial,decision,,comparison,"feat_ai_itinerary_generator,feat_safety_timer,feat_offline_access",,tc_ai_planning,cluster,medium,planned,2026-05-09,seed,brand
+Barcelona cruise port guide,0,0,0,informational,awareness,,port guide,"feat_port_guides,feat_transport_hub",,tc_port_guides,cluster,high,planned,2026-05-09,seed,
+Santorini cruise port guide,0,0,0,informational,awareness,,port guide,"feat_port_guides",,tc_port_guides,cluster,high,planned,2026-05-09,seed,
+Dubrovnik cruise port tips,0,0,0,informational,awareness,,port guide,"feat_port_guides,feat_safety_timer",,tc_port_guides,cluster,medium,planned,2026-05-09,seed,
+cruise port day tips,0,0,0,informational,awareness,,listicle,"feat_safety_timer,feat_buffer_time",,tc_port_day_planning,cluster,medium,planned,2026-05-09,seed,
+what to do in port cruise,0,0,0,informational,awareness,,guide,"feat_port_guides,feat_ai_port_suggestions",,tc_port_day_planning,cluster,medium,planned,2026-05-09,seed,
+how to not miss your cruise ship,0,0,0,informational,awareness,,how-to guide,"feat_safety_timer,feat_buffer_time,feat_port_alert_banner",,tc_port_day_planning,cluster,high,planned,2026-05-09,seed,Critical fear/pain point
+tender port cruise guide,0,0,0,informational,awareness,,how-to guide,"feat_tender_delay_config,feat_safety_timer",,tc_port_day_planning,cluster,medium,planned,2026-05-09,seed,
+cruise packing list by port,0,0,0,informational,awareness,,listicle,"feat_ai_packing_list",,tc_port_day_planning,cluster,low,planned,2026-05-09,seed,
+cruise budget tips save money,0,0,0,informational,awareness,,guide,"feat_budget_intelligence,feat_expense_tracker",,tc_diy_excursions,cluster,medium,planned,2026-05-09,seed,
+best cruise port day apps,0,0,0,commercial,consideration,,listicle,"feat_ai_itinerary_generator,feat_offline_access,feat_safety_timer",,tc_ai_planning,cluster,high,planned,2026-05-09,seed,
+cruise excursion booking alternatives,0,0,0,commercial,consideration,,comparison,"feat_budget_intelligence,feat_ai_itinerary_generator",,tc_diy_excursions,cluster,medium,planned,2026-05-09,seed,
+Mediterranean cruise port guide,0,0,0,informational,awareness,,pillar guide,"feat_port_guides",,tc_port_guides,pillar,high,planned,2026-05-09,seed,
+Caribbean cruise port guide,0,0,0,informational,awareness,,pillar guide,"feat_port_guides",,tc_port_guides,cluster,high,planned,2026-05-09,seed,
+cruise port day itinerary template,0,0,0,informational,awareness,,template/tool,"feat_ai_itinerary_generator,feat_journey_timeline",,tc_port_day_planning,cluster,medium,planned,2026-05-09,seed,
+offline cruise planner app,0,0,0,commercial,decision,,comparison,"feat_offline_access,feat_pdf_export",,tc_ai_planning,cluster,medium,planned,2026-05-09,seed,
+PortTrip review,0,0,0,commercial,decision,,review,,,,standalone,medium,planned,2026-05-09,seed,brand

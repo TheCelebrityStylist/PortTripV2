@@ -1,0 +1,415 @@
+project: "PortTrip"
+last_updated: "2026-05-09"
+generated_from: "src code scan (pages/, components/)"
+
+categories:
+
+  - id: "cat_ai_intelligence"
+    name: "AI & Intelligence"
+    description: "AI-powered features that generate itineraries, suggestions, and insights automatically"
+    subcategories:
+
+      - id: "sub_itinerary_generation"
+        name: "Itinerary Generation"
+        features:
+
+          - id: "feat_ai_itinerary_generator"
+            name: "AI Itinerary Generator"
+            description: "Generates a full cruise port day itinerary in ~30 seconds based on port city, all-aboard time, group type, budget mode, and travel style. Produces timeline blocks covering arrival, stops, transit, and departure."
+            status: "available"
+            doc_refs:
+              - path: "components/AiPortDayDialog.jsx"
+                section: "Main generation dialog"
+              - path: "pages/Planner.jsx"
+                section: "PlanLaunchFlow"
+            blog_refs: []
+            tags: ["ai", "itinerary", "planning", "automation"]
+            notes: "Core flagship feature. Uses portChat function with 'packing' and other modes."
+
+          - id: "feat_ai_chat_planner"
+            name: "AI Chat Planner"
+            description: "Conversational AI interface for refining and adjusting the port day plan through natural language chat."
+            status: "available"
+            doc_refs:
+              - path: "components/AiChatPlanner.jsx"
+                section: "Chat interface"
+            blog_refs: []
+            tags: ["ai", "chat", "planning"]
+            notes: ""
+
+          - id: "feat_ai_port_suggestions"
+            name: "AI Port Day Suggestions"
+            description: "AI-generated suggestions for activities, stops, and alternatives specific to the selected port."
+            status: "available"
+            doc_refs:
+              - path: "components/AiSuggestDialog.jsx"
+                section: "Suggestion dialog"
+            blog_refs: []
+            tags: ["ai", "suggestions", "discovery"]
+            notes: ""
+
+      - id: "sub_plan_intelligence"
+        name: "Plan Intelligence"
+        features:
+
+          - id: "feat_port_intelligence_panel"
+            name: "Port Intelligence Panel"
+            description: "Shows contextual intelligence about the port including alerts, tips, and risk assessments for the planned day."
+            status: "available"
+            doc_refs:
+              - path: "components/PortIntelligencePanel.jsx"
+                section: "Intelligence panel"
+            blog_refs: []
+            tags: ["intelligence", "alerts", "port-info"]
+            notes: ""
+
+          - id: "feat_plan_score_card"
+            name: "Plan Score Card"
+            description: "Scores the generated plan on factors like time efficiency, budget, and coverage — helping cruisers assess plan quality."
+            status: "available"
+            doc_refs:
+              - path: "components/PlanScoreCard.jsx"
+                section: "Score display"
+            blog_refs: []
+            tags: ["scoring", "quality", "intelligence"]
+            notes: ""
+
+          - id: "feat_plan_intelligence_card"
+            name: "Plan Intelligence Card"
+            description: "Summary card surfacing key intelligence insights about the port day plan such as trap risks and timing advice."
+            status: "available"
+            doc_refs:
+              - path: "components/PlanIntelligenceCard.jsx"
+                section: "Intelligence card"
+            blog_refs: []
+            tags: ["intelligence", "insights"]
+            notes: ""
+
+          - id: "feat_route_opportunities"
+            name: "Route Opportunities"
+            description: "Identifies additional stops or route optimizations that could improve the itinerary without affecting the all-aboard deadline."
+            status: "available"
+            doc_refs:
+              - path: "components/RouteOpportunities.jsx"
+                section: "Opportunities panel"
+            blog_refs: []
+            tags: ["routing", "optimization", "discovery"]
+            notes: ""
+
+          - id: "feat_place_alternatives"
+            name: "Place Alternatives"
+            description: "Suggests alternative locations for any stop in the itinerary — useful if a venue is closed or doesn't suit the group."
+            status: "available"
+            doc_refs:
+              - path: "components/PlaceAlternatives.jsx"
+                section: "Alternatives panel"
+            blog_refs: []
+            tags: ["alternatives", "flexibility", "discovery"]
+            notes: ""
+
+      - id: "sub_ai_tools"
+        name: "AI Utility Tools"
+        features:
+
+          - id: "feat_ai_packing_list"
+            name: "AI Packing List Generator"
+            description: "Generates a personalized packing list for the port day based on planned activities, group type, and travel style. Organized by category (Documents, Clothing, Tech, Health, etc.)."
+            status: "available"
+            doc_refs:
+              - path: "components/PackingList.jsx"
+                section: "Packing list generator"
+            blog_refs: []
+            tags: ["ai", "packing", "preparation"]
+            notes: ""
+
+  - id: "cat_planning_itinerary"
+    name: "Planning & Itinerary Tools"
+    description: "Tools for building, editing, and managing the port day schedule"
+    subcategories:
+
+      - id: "sub_timeline"
+        name: "Journey Timeline"
+        features:
+
+          - id: "feat_journey_timeline"
+            name: "Journey Timeline"
+            description: "Visual drag-and-drop timeline of the port day divided into blocks (arrival, stops, transit, buffer, transfer, departure). Shows timing for each block."
+            status: "available"
+            doc_refs:
+              - path: "components/JourneyTimeline.jsx"
+                section: "Timeline view"
+              - path: "components/timeline/"
+                section: "Timeline subcomponents"
+            blog_refs: []
+            tags: ["timeline", "itinerary", "visual-planning"]
+            notes: "Block types: arrival, departure, stop, transit, buffer, transfer"
+
+          - id: "feat_plan_variants"
+            name: "Plan Variants"
+            description: "Generates multiple itinerary variants (e.g., relaxed vs action-packed) so cruisers can pick the best fit for their group."
+            status: "available"
+            doc_refs:
+              - path: "components/PlanVariantSelector.jsx"
+                section: "Variant selector"
+            blog_refs: []
+            tags: ["variants", "options", "flexibility"]
+            notes: ""
+
+      - id: "sub_transport"
+        name: "Transport & Navigation"
+        features:
+
+          - id: "feat_transport_hub"
+            name: "Transport Hub"
+            description: "Shows transport options between stops: walking, bus, metro/train, taxi, ferry, and rideshare — with estimated times and costs."
+            status: "available"
+            doc_refs:
+              - path: "components/TransportHub.jsx"
+                section: "Transport options"
+            blog_refs: []
+            tags: ["transport", "navigation", "logistics"]
+            notes: "Modes: walk, bus, train, taxi, ferry, rideshare"
+
+          - id: "feat_port_map"
+            name: "Port Map"
+            description: "Interactive map showing the port layout, stops in the itinerary, and routes between them."
+            status: "available"
+            doc_refs:
+              - path: "components/PortMap.jsx"
+                section: "Map view"
+              - path: "components/PortGuideMap.jsx"
+                section: "Port guide map"
+            blog_refs: []
+            tags: ["map", "navigation", "visual"]
+            notes: ""
+
+      - id: "sub_safety"
+        name: "Safety & Time Management"
+        features:
+
+          - id: "feat_safety_timer"
+            name: "Safety Timer"
+            description: "Countdown timer tracking time remaining until the all-aboard deadline, helping cruisers avoid missing the ship."
+            status: "available"
+            doc_refs:
+              - path: "components/SafetyTimer.jsx"
+                section: "Timer component"
+            blog_refs: []
+            tags: ["safety", "timing", "all-aboard"]
+            notes: "Key differentiator — addresses cruisers' #1 fear"
+
+          - id: "feat_port_alert_banner"
+            name: "Port Alert Banner"
+            description: "Real-time alerts for port-specific issues such as tender delays, closures, or timing changes that affect the plan."
+            status: "available"
+            doc_refs:
+              - path: "components/PortAlertBanner.jsx"
+                section: "Alert banner"
+            blog_refs: []
+            tags: ["alerts", "real-time", "safety"]
+            notes: ""
+
+          - id: "feat_tender_delay_config"
+            name: "Tender Delay Configuration"
+            description: "Lets users set expected tender delay minutes during plan setup, so the AI factors this into timing calculations."
+            status: "available"
+            doc_refs:
+              - path: "pages/Planner.jsx"
+                section: "PlanSetupDialog"
+            blog_refs: []
+            tags: ["tender", "timing", "configuration"]
+            notes: ""
+
+          - id: "feat_buffer_time"
+            name: "Buffer Time Management"
+            description: "Configurable buffer time (default 90 min) built into the plan before all-aboard, protecting against delays and overruns."
+            status: "available"
+            doc_refs:
+              - path: "pages/Planner.jsx"
+                section: "PlanSetupDialog"
+            blog_refs: []
+            tags: ["buffer", "safety", "timing"]
+            notes: ""
+
+  - id: "cat_budget_finance"
+    name: "Budget & Finance"
+    description: "Tools for tracking spending and comparing cruise excursion costs"
+    subcategories:
+
+      - id: "sub_budget"
+        name: "Budget Tools"
+        features:
+
+          - id: "feat_budget_intelligence"
+            name: "Budget Intelligence Mode"
+            description: "Side-by-side comparison of ship excursion price vs DIY route cost. Calculates exact savings amount and percentage."
+            status: "available"
+            doc_refs:
+              - path: "components/BudgetIntelligence.jsx"
+                section: "Budget comparison"
+            blog_refs: []
+            tags: ["budget", "savings", "comparison"]
+            notes: "€85 average saving is the headline stat derived from this feature"
+
+          - id: "feat_expense_tracker"
+            name: "Expense Tracker"
+            description: "Track actual spending during the port day — restaurants, transport, entrance fees, shopping — against the planned budget."
+            status: "available"
+            doc_refs:
+              - path: "components/ExpenseTracker.jsx"
+                section: "Expense tracker"
+            blog_refs: []
+            tags: ["expenses", "tracking", "budget"]
+            notes: ""
+
+  - id: "cat_port_guides"
+    name: "Port Guides & Discovery"
+    description: "Curated destination content and port-specific information for 50+ cruise ports"
+    subcategories:
+
+      - id: "sub_guides"
+        name: "Port Guide Content"
+        features:
+
+          - id: "feat_port_guides"
+            name: "Port Guides"
+            description: "Detailed guides for 50+ cruise ports worldwide covering attractions, food, transport, safety, and local tips. Content is AI-generated and curated."
+            status: "available"
+            doc_refs:
+              - path: "pages/PortGuide.jsx"
+                section: "Port guide page"
+              - path: "pages/PortList.jsx"
+                section: "Port listing"
+            blog_refs: []
+            tags: ["port-guides", "destinations", "content"]
+            notes: "Covers Mediterranean, Caribbean, Northern Europe ports"
+
+          - id: "feat_port_community"
+            name: "Port Community Widget"
+            description: "Community-sourced tips and comments from fellow cruisers who have visited the port."
+            status: "available"
+            doc_refs:
+              - path: "components/PortCommunityWidget.jsx"
+                section: "Community widget"
+            blog_refs: []
+            tags: ["community", "user-generated", "tips"]
+            notes: ""
+
+  - id: "cat_cruise_management"
+    name: "Cruise Management"
+    description: "Tools for organizing and managing entire cruise itineraries across multiple ports"
+    subcategories:
+
+      - id: "sub_cruise_profile"
+        name: "Cruise Organization"
+        features:
+
+          - id: "feat_cruise_profile"
+            name: "Cruise Profile"
+            description: "Store cruise details including cruise line, ship name, departure/return dates, cabin number, booking reference, and all port stops."
+            status: "available"
+            doc_refs:
+              - path: "components/CruiseProfile.jsx"
+                section: "Cruise profile"
+              - path: "pages/Dashboard.jsx"
+                section: "Cruise dialog"
+            blog_refs: []
+            tags: ["cruise", "profile", "organization"]
+            notes: ""
+
+          - id: "feat_my_cruises"
+            name: "My Cruises Dashboard"
+            description: "Dashboard to manage multiple cruises, view upcoming ports, and access plans for each port stop."
+            status: "available"
+            doc_refs:
+              - path: "pages/MyCruises.jsx"
+                section: "Cruise list"
+            blog_refs: []
+            tags: ["dashboard", "cruise-management"]
+            notes: ""
+
+          - id: "feat_cruise_import"
+            name: "Cruise Import"
+            description: "Import cruise itinerary details from external sources to populate port stops automatically."
+            status: "available"
+            doc_refs:
+              - path: "components/cruise/CruiseImportModal.jsx"
+                section: "Import modal"
+            blog_refs: []
+            tags: ["import", "cruise", "automation"]
+            notes: ""
+
+  - id: "cat_sharing_export"
+    name: "Sharing & Export"
+    description: "Features for sharing and exporting port day plans"
+    subcategories:
+
+      - id: "sub_sharing"
+        name: "Plan Sharing"
+        features:
+
+          - id: "feat_share_plan"
+            name: "Share Plan"
+            description: "Share the port day plan with travel companions via a unique link. Recipients can view the full itinerary without needing an account."
+            status: "available"
+            doc_refs:
+              - path: "components/SharePlanButton.jsx"
+                section: "Share button"
+              - path: "pages/SharedPlan.jsx"
+                section: "Shared plan view"
+            blog_refs: []
+            tags: ["sharing", "collaboration", "link"]
+            notes: ""
+
+          - id: "feat_pdf_export"
+            name: "PDF Export"
+            description: "Export the full port day itinerary as a PDF for offline reference or printing."
+            status: "available"
+            doc_refs:
+              - path: "components/ExportPDFButton.jsx"
+                section: "Export button"
+            blog_refs: []
+            tags: ["pdf", "export", "offline"]
+            notes: ""
+
+          - id: "feat_offline_access"
+            name: "Offline Access"
+            description: "Plans and port guides are cached locally so they're accessible without internet — essential when docked in ports with poor connectivity."
+            status: "available"
+            doc_refs:
+              - path: "utils/offlineCache.js"
+                section: "Cache utilities"
+            blog_refs: []
+            tags: ["offline", "cache", "accessibility"]
+            notes: "Key differentiator vs generic AI tools"
+
+  - id: "cat_pricing"
+    name: "Pricing & Access"
+    description: "Pricing tiers and access control"
+    subcategories:
+
+      - id: "sub_tiers"
+        name: "Pricing Tiers"
+        features:
+
+          - id: "feat_free_tier"
+            name: "Free Plan"
+            description: "Access to any 3 port guides with full planning tools for those ports. No time limit, no credit card required."
+            status: "available"
+            doc_refs:
+              - path: "pages/Home.jsx"
+                section: "Pricing section"
+            blog_refs: []
+            tags: ["pricing", "free", "access"]
+            notes: ""
+
+          - id: "feat_cruise_pass"
+            name: "Cruise Pass"
+            description: "One-time purchase (€12.99) unlocking all ports for a single cruise. No subscription — pay once per trip."
+            status: "available"
+            doc_refs:
+              - path: "pages/Home.jsx"
+                section: "Pricing section"
+            blog_refs: []
+            tags: ["pricing", "one-time", "cruise-pass"]
+            notes: "Key differentiation: no subscription model"

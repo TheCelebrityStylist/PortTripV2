@@ -1,0 +1,143 @@
+# Blog Structure Templates — PortTrip
+# Each type has a specific VOICE and STRUCTURE.
+# Always read tone-guide.md in addition to the relevant structure below.
+
+comparison:
+  voice: "analytical and fair — you've done the research so the reader doesn't have to. Lead with your conclusion."
+  word_count: "2000-3000"
+  tone_notes: "Data-driven. Respect competitors — lead with their strengths before weaknesses. Never trash-talk."
+  structure:
+    - section: "Hero summary"
+      notes: "State the verdict upfront. Readers scan — don't bury the conclusion."
+    - section: "Who each option is best for"
+      notes: "2-3 bullet points max per option. Quick."
+    - section: "How we compared them"
+      notes: "Define the criteria — why these criteria matter for cruise travelers specifically"
+    - section: "Feature-by-feature comparison"
+      notes: "Table or side-by-side cards. Use ✓/✗/⚠️ signals. Inject E-E-A-T here (real test results, screenshots if available)."
+    - section: "The decision framework"
+      notes: "3-5 scenarios: 'If you X, go with Y.' Specific, not vague."
+    - section: "FAQ"
+      notes: "Pull from People Also Ask. 4-6 questions."
+    - section: "Conclusion + CTA"
+      notes: "Soft CTA once. 'Try PortTrip free' — never pushy."
+  eeat_injection_points:
+    - "Feature comparison table — show real tested output"
+    - "Decision framework — cite real user scenarios or stats"
+
+listicle:
+  voice: "helpful curator — you've filtered the noise. Be specific, not encyclopedic. Every item must earn its place."
+  word_count: "2500-4000"
+  tone_notes: "Warm and direct. Each list item is a mini-recommendation with 2-3 sentences of real reasoning."
+  structure:
+    - section: "Intro — what problem this list solves"
+      notes: "40-60 words max. Hook with a specific pain point."
+    - section: "Quick picks (TL;DR)"
+      notes: "Best for [X]: [option]. 3-4 quick picks for scanners."
+    - section: "How we chose these"
+      notes: "Criteria used — build trust before the list"
+    - section: "The list (numbered)"
+      notes: "Each item: name, who it's for, what makes it stand out, one honest drawback. Inject E-E-A-T in top 2-3 items."
+    - section: "Comparison table"
+      notes: "Quick reference table at end — feature matrix style"
+    - section: "FAQ"
+      notes: "4-6 questions from PAA data"
+    - section: "Conclusion + CTA"
+      notes: "Summarize, soft CTA."
+  eeat_injection_points:
+    - "Item descriptions — cite real user ratings, usage stats"
+    - "Top pick — show why with data (4.9★, €85 savings, etc.)"
+
+tutorial:
+  voice: "patient teacher who's done this themselves — use 'I' or 'we', share real experience, explain the why not just the what."
+  word_count: "1500-2500"
+  tone_notes: "Conversational and encouraging. Acknowledge that it can feel overwhelming, then make it simple."
+  structure:
+    - section: "What you'll achieve"
+      notes: "One sentence outcome. Then estimated time and difficulty."
+    - section: "What you need before starting"
+      notes: "Prerequisites and setup. Don't bury this."
+    - section: "Step-by-step walkthrough"
+      notes: "Numbered steps. Each step: action + why it matters. Screenshots or examples where helpful."
+    - section: "Pro tips"
+      notes: "2-4 insights that come from real experience, not just common sense"
+    - section: "Common mistakes to avoid"
+      notes: "3-5 mistakes. Be specific — 'don't do X because Y happened to Z'"
+    - section: "FAQ"
+      notes: "4-6 questions from PAA data"
+    - section: "Wrap-up + CTA"
+      notes: "Soft CTA — natural, not salesy."
+  eeat_injection_points:
+    - "Step explanations — 'we found that...' or 'experienced cruisers tell us...'"
+    - "Pro tips section — inject testimonials or community wisdom"
+    - "Common mistakes — cite real-world examples"
+
+how_to:
+  voice: "practical problem-solver — direct, no fluff. Get to the solution fast."
+  word_count: "1200-2000"
+  tone_notes: "Efficient and clear. Respect the reader's time. Short paragraphs."
+  structure:
+    - section: "Problem statement"
+      notes: "One paragraph: here's the problem, here's why it matters, here's what we'll cover."
+    - section: "Quick answer / TL;DR"
+      notes: "Summary in 3-5 bullet points for scanners"
+    - section: "Step-by-step solution"
+      notes: "Numbered. Short steps. Each step does one thing."
+    - section: "Important caveats"
+      notes: "What changes in specific scenarios (tender ports, first visit, group travel)"
+    - section: "FAQ"
+      notes: "4-6 questions from PAA data"
+    - section: "CTA"
+      notes: "One-line soft CTA at end."
+  eeat_injection_points:
+    - "Quick answer — cite the stat or data point that proves this works"
+    - "Caveats — show real-world nuance from experience"
+
+review:
+  voice: "honest reviewer who admits drawbacks — if you only say good things, readers won't trust you."
+  word_count: "2000-3000"
+  tone_notes: "Balanced and specific. Avoid hype words (amazing, revolutionary, game-changing). Cite specifics."
+  structure:
+    - section: "Verdict at the top"
+      notes: "Who it's for, summary rating (if applicable), one-sentence verdict."
+    - section: "What it is"
+      notes: "Brief description — what does it actually do?"
+    - section: "What we tested"
+      notes: "How we evaluated it — build methodological credibility"
+    - section: "What works well"
+      notes: "3-5 specific strengths with concrete examples or data"
+    - section: "What doesn't work as well"
+      notes: "2-3 honest weaknesses — specific, not vague. This builds trust."
+    - section: "Pricing"
+      notes: "What you get at each tier — objective, not sales-y"
+    - section: "Who should use it"
+      notes: "Specific scenarios and user types"
+    - section: "FAQ"
+      notes: "4-6 questions from PAA data"
+    - section: "Final verdict + CTA"
+      notes: "Restate verdict, soft CTA."
+  eeat_injection_points:
+    - "What we tested — show real test methodology, real outputs"
+    - "Strengths section — cite ratings, stats, user feedback"
+    - "Pricing — accuracy signals trust"
+
+thought_leadership:
+  voice: "opinionated expert who takes a stand — don't hedge. Say what you believe and defend it with evidence."
+  word_count: "1500-2500"
+  tone_notes: "Confident, occasionally provocative, but always backed by evidence. It's okay to be wrong as long as you reason well."
+  structure:
+    - section: "The take"
+      notes: "Lead with your opinion in the first paragraph. No preamble."
+    - section: "Why this matters"
+      notes: "Stakes — why should the reader care about this opinion?"
+    - section: "The evidence"
+      notes: "Data, examples, logic. 3-4 supporting arguments."
+    - section: "The counterargument (steel-man it)"
+      notes: "Give the opposing view its best form, then respond to it."
+    - section: "What this means for cruisers / the industry"
+      notes: "Practical implications of your take"
+    - section: "Conclusion"
+      notes: "Restate the take confidently. No CTA unless it flows naturally."
+  eeat_injection_points:
+    - "Evidence section — cite stats, studies, community feedback"
+    - "Personal experience or team experience where relevant"

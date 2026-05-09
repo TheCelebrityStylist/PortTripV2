@@ -1,0 +1,367 @@
+last_updated: "2026-05-09"
+
+queue:
+
+  # ─── HIGH PRIORITY: Pillar pages (need SERP data before writing) ─────────────
+
+  - id: "q_001"
+    title: "The Complete Guide to Planning a Cruise Port Day"
+    blog_type: "how-to"
+    content_type: "pillar"
+    cluster_id: "tc_port_day_planning"
+    target_keywords:
+      - "cruise port day planning"
+      - "how to plan a cruise port day"
+      - "cruise port day tips"
+    target_features:
+      - "feat_ai_itinerary_generator"
+      - "feat_journey_timeline"
+      - "feat_safety_timer"
+      - "feat_buffer_time"
+      - "feat_transport_hub"
+    unique_angle: "The only guide written specifically for independent cruisers — covers all-aboard logistics, tender ports, buffer time, and group dynamics that generic travel guides completely ignore"
+    priority: "high"
+    priority_reason: "Foundation pillar — all cluster pages link here; no organic presence without it"
+    status: "planned"
+    estimated_word_count: 3500
+    eeat_plan: "Include €85 average savings stat, 4.9★ rating signal, and a real cruiser scenario walking through the planning steps"
+    serp_analyzed: false
+    cannibalization_check: "passed"
+    notes: "REQUIRES SERP DATA before writing. Ask user to Google 'cruise port day planning'."
+    depends_on: []
+    internal_link_targets: []
+
+  - id: "q_002"
+    title: "DIY Cruise Shore Excursions: The Complete Guide"
+    blog_type: "how-to"
+    content_type: "pillar"
+    cluster_id: "tc_diy_excursions"
+    target_keywords:
+      - "cruise excursion alternatives"
+      - "diy cruise shore excursions"
+      - "skip ship excursions"
+    target_features:
+      - "feat_budget_intelligence"
+      - "feat_ai_itinerary_generator"
+      - "feat_transport_hub"
+      - "feat_safety_timer"
+    unique_angle: "Honest guide that admits when ship excursions ARE the right choice — then shows exactly when and how DIY beats them, with real cost data"
+    priority: "high"
+    priority_reason: "Highest-intent cluster for people ready to plan independently — direct conversion funnel"
+    status: "planned"
+    estimated_word_count: 3500
+    eeat_plan: "€85 avg savings stat, specific port-by-port savings examples, Budget Intelligence Mode demonstration"
+    serp_analyzed: false
+    cannibalization_check: "passed"
+    notes: "REQUIRES SERP DATA before writing. Ask user to Google 'cruise excursion alternatives'."
+    depends_on: []
+    internal_link_targets: []
+
+  - id: "q_003"
+    title: "The Best AI Tools for Cruise Planning in 2026"
+    blog_type: "listicle"
+    content_type: "pillar"
+    cluster_id: "tc_ai_planning"
+    target_keywords:
+      - "AI cruise itinerary planner"
+      - "best cruise port day apps"
+      - "AI travel planning cruise"
+    target_features:
+      - "feat_ai_itinerary_generator"
+      - "feat_ai_chat_planner"
+      - "feat_offline_access"
+      - "feat_safety_timer"
+    unique_angle: "Genuinely tests each tool for cruise-specific needs (all-aboard awareness, offline access, tender port knowledge) — not just 'which AI is smarter'"
+    priority: "high"
+    priority_reason: "Captures growing 'AI for travel' search intent and positions PortTrip in the AI tools category"
+    status: "planned"
+    estimated_word_count: 3000
+    eeat_plan: "Show real output comparison between tools tested on the same port and scenario"
+    serp_analyzed: false
+    cannibalization_check: "passed"
+    notes: "REQUIRES SERP DATA before writing. Ask user to Google 'AI cruise itinerary planner'."
+    depends_on: []
+    internal_link_targets: []
+
+  - id: "q_004"
+    title: "Mediterranean Cruise Ports: The Complete Guide"
+    blog_type: "listicle"
+    content_type: "pillar"
+    cluster_id: "tc_port_guides"
+    target_keywords:
+      - "Mediterranean cruise port guide"
+      - "Mediterranean cruise ports"
+      - "best Mediterranean cruise ports"
+    target_features:
+      - "feat_port_guides"
+      - "feat_ai_itinerary_generator"
+      - "feat_transport_hub"
+    unique_angle: "Covers every major Med port from a DIY independent traveler's perspective — not a ship excursion guide — with real logistics, timing, and what changes port-to-port"
+    priority: "high"
+    priority_reason: "Mediterranean is the world's most popular cruise region — massive search volume"
+    status: "planned"
+    estimated_word_count: 4000
+    eeat_plan: "Port-by-port savings comparison, real itinerary examples, community tips from 2,400+ cruisers"
+    serp_analyzed: false
+    cannibalization_check: "passed"
+    notes: "REQUIRES SERP DATA before writing. Ask user to Google 'Mediterranean cruise port guide'."
+    depends_on: []
+    internal_link_targets: []
+
+  # ─── HIGH PRIORITY: Competitor comparisons ───────────────────────────────────
+
+  - id: "q_005"
+    title: "Using ChatGPT to Plan a Cruise Port Day: Does It Work?"
+    blog_type: "review"
+    content_type: "cluster"
+    cluster_id: "tc_ai_planning"
+    target_keywords:
+      - "ChatGPT cruise planning"
+      - "ChatGPT for cruise itinerary"
+    target_features:
+      - "feat_ai_itinerary_generator"
+      - "feat_safety_timer"
+      - "feat_tender_delay_config"
+      - "feat_offline_access"
+    unique_angle: "Honest test: use ChatGPT to plan a Santorini port day with a 17:00 all-aboard, then document exactly where it fails (tender delays, buffer time, offline) — not just theory"
+    priority: "high"
+    priority_reason: "ChatGPT is the main alternative people consider — capturing this query intercepts high-intent users mid-evaluation"
+    status: "planned"
+    estimated_word_count: 2500
+    eeat_plan: "Show real ChatGPT conversation screenshots, real output vs PortTrip output for same scenario"
+    serp_analyzed: false
+    cannibalization_check: "passed"
+    notes: "Respectful — lead with what ChatGPT does well, then show where cruise-specific context matters"
+    depends_on: ["q_003"]
+    internal_link_targets: ["ai-cruise-planning-tools", "porttrip-vs-chatgpt"]
+
+  - id: "q_006"
+    title: "How to Never Miss Your Cruise Ship at Port"
+    blog_type: "how-to"
+    content_type: "cluster"
+    cluster_id: "tc_port_day_planning"
+    target_keywords:
+      - "how to not miss your cruise ship"
+      - "cruise ship all aboard time"
+      - "missed cruise ship port"
+    target_features:
+      - "feat_safety_timer"
+      - "feat_buffer_time"
+      - "feat_port_alert_banner"
+      - "feat_tender_delay_config"
+    unique_angle: "Addresses the #1 fear with a concrete system: buffer time formula, real cases where people cut it close, and how automated alerts help — not just 'leave early'"
+    priority: "high"
+    priority_reason: "Highest-emotion search query in cruise travel — extremely shareable, high traffic potential"
+    status: "planned"
+    estimated_word_count: 2000
+    eeat_plan: "Include real missed-ship statistics, community anecdotes from PortTrip users, specific buffer time recommendations by port type"
+    serp_analyzed: false
+    cannibalization_check: "passed"
+    notes: ""
+    depends_on: []
+    internal_link_targets: ["cruise-port-day-planning", "tender-port-cruise-guide"]
+
+  # ─── MEDIUM PRIORITY: Cluster pages ──────────────────────────────────────────
+
+  - id: "q_007"
+    title: "Barcelona Cruise Port: What to Do on Your Own"
+    blog_type: "how-to"
+    content_type: "cluster"
+    cluster_id: "tc_port_guides"
+    target_keywords:
+      - "Barcelona cruise port guide"
+      - "Barcelona cruise port tips"
+      - "things to do Barcelona cruise"
+    target_features:
+      - "feat_port_guides"
+      - "feat_transport_hub"
+      - "feat_ai_itinerary_generator"
+      - "feat_budget_intelligence"
+    unique_angle: "Written from the port gate — not the city center — with real taxi costs, metro routes, and timing from actual dock to key sights, not generic tourist info"
+    priority: "medium"
+    priority_reason: "Barcelona is the most visited Mediterranean cruise port — high volume, easy conversion"
+    status: "planned"
+    estimated_word_count: 2500
+    eeat_plan: "Real cost examples, transport timing, 4.9★ rating trust signal"
+    serp_analyzed: false
+    cannibalization_check: "passed"
+    notes: ""
+    depends_on: ["q_004"]
+    internal_link_targets: ["mediterranean-cruise-ports-guide", "cruise-port-day-planning", "diy-cruise-shore-excursions"]
+
+  - id: "q_008"
+    title: "Santorini Cruise Port: DIY Day Guide"
+    blog_type: "how-to"
+    content_type: "cluster"
+    cluster_id: "tc_port_guides"
+    target_keywords:
+      - "Santorini cruise port guide"
+      - "Santorini cruise ship tips"
+      - "Santorini tender port"
+    target_features:
+      - "feat_port_guides"
+      - "feat_tender_delay_config"
+      - "feat_safety_timer"
+      - "feat_transport_hub"
+    unique_angle: "Covers Santorini's notorious cable car wait (30-90 min), donkey path alternative, and how tender delay eats into shore time — specific logistical detail no generic guide provides"
+    priority: "medium"
+    priority_reason: "Santorini is every cruiser's dream port — huge search volume and high emotional investment"
+    status: "planned"
+    estimated_word_count: 2500
+    eeat_plan: "Real timing examples (tender + cable car), community tips from cruisers who've done it"
+    serp_analyzed: false
+    cannibalization_check: "passed"
+    notes: ""
+    depends_on: ["q_004"]
+    internal_link_targets: ["mediterranean-cruise-ports-guide", "tender-port-cruise-guide", "never-miss-cruise-ship-port"]
+
+  - id: "q_009"
+    title: "DIY vs Ship Excursion: Which Is Right for You?"
+    blog_type: "comparison"
+    content_type: "cluster"
+    cluster_id: "tc_diy_excursions"
+    target_keywords:
+      - "diy vs ship excursion"
+      - "should I book ship excursion"
+      - "cruise shore excursion worth it"
+    target_features:
+      - "feat_budget_intelligence"
+      - "feat_safety_timer"
+      - "feat_ai_itinerary_generator"
+    unique_angle: "Decision framework with 5 honest criteria — includes scenarios where ship excursions genuinely win (tender ports, popular sights, first-time destinations)"
+    priority: "medium"
+    priority_reason: "High commercial intent — people making this decision are ready to plan"
+    status: "planned"
+    estimated_word_count: 2500
+    eeat_plan: "Real cost comparison table, €85 avg savings stat, specific port examples"
+    serp_analyzed: false
+    cannibalization_check: "passed"
+    notes: "Must avoid being one-sided — credibility comes from acknowledging when ship excursions make sense"
+    depends_on: ["q_002"]
+    internal_link_targets: ["diy-cruise-shore-excursions", "cruise-port-day-planning", "skip-ship-excursions-save-money"]
+
+  - id: "q_010"
+    title: "PortTrip vs ChatGPT for Cruise Port Planning"
+    blog_type: "comparison"
+    content_type: "cluster"
+    cluster_id: "tc_ai_planning"
+    target_keywords:
+      - "PortTrip vs ChatGPT"
+      - "best AI for cruise planning"
+    target_features:
+      - "feat_ai_itinerary_generator"
+      - "feat_safety_timer"
+      - "feat_offline_access"
+      - "feat_tender_delay_config"
+      - "feat_budget_intelligence"
+    unique_angle: "Structured feature-by-feature comparison on cruise-specific criteria — not general AI capability"
+    priority: "medium"
+    priority_reason: "Direct brand comparison captures bottom-of-funnel users"
+    status: "planned"
+    estimated_word_count: 2000
+    eeat_plan: "Side-by-side output for same scenario, honest about where ChatGPT is sufficient"
+    serp_analyzed: false
+    cannibalization_check: "passed"
+    notes: ""
+    depends_on: ["q_005"]
+    internal_link_targets: ["chatgpt-cruise-planning", "ai-cruise-planning-tools"]
+
+  - id: "q_011"
+    title: "Best Cruise Port Day Apps in 2026"
+    blog_type: "listicle"
+    content_type: "cluster"
+    cluster_id: "tc_ai_planning"
+    target_keywords:
+      - "best cruise port day apps"
+      - "cruise planning app"
+      - "cruise port app"
+    target_features:
+      - "feat_ai_itinerary_generator"
+      - "feat_offline_access"
+      - "feat_safety_timer"
+      - "feat_share_plan"
+    unique_angle: "Scores each app on cruise-specific criteria (offline mode, all-aboard awareness, port-specific content depth) rather than general 'best travel apps'"
+    priority: "medium"
+    priority_reason: "Commercial listicle format — high conversion potential for bottom-of-funnel searchers"
+    status: "planned"
+    estimated_word_count: 2500
+    eeat_plan: "Real screenshots, actual testing by the team, 4.9★ rating for PortTrip"
+    serp_analyzed: false
+    cannibalization_check: "passed"
+    notes: ""
+    depends_on: ["q_003"]
+    internal_link_targets: ["ai-cruise-planning-tools", "offline-cruise-planning-apps"]
+
+  # ─── LOW PRIORITY: Supporting content ────────────────────────────────────────
+
+  - id: "q_012"
+    title: "How Tender Ports Work: What Cruisers Need to Know"
+    blog_type: "how-to"
+    content_type: "cluster"
+    cluster_id: "tc_port_day_planning"
+    target_keywords:
+      - "tender port cruise guide"
+      - "what is a tender port cruise"
+      - "tender boat cruise"
+    target_features:
+      - "feat_tender_delay_config"
+      - "feat_safety_timer"
+      - "feat_buffer_time"
+    unique_angle: "Explains tender logistics in plain language + gives a concrete planning framework for tender ports (add 45-90 min buffer, check tender schedule, etc.)"
+    priority: "low"
+    priority_reason: "Supporting content — good for internal links from safety/timing content"
+    status: "planned"
+    estimated_word_count: 1800
+    eeat_plan: "Real tender wait time data by port, community tips"
+    serp_analyzed: false
+    cannibalization_check: "passed"
+    notes: ""
+    depends_on: []
+    internal_link_targets: ["cruise-port-day-planning", "never-miss-cruise-ship-port", "santorini-cruise-port-guide"]
+
+  - id: "q_013"
+    title: "How to Budget for a Cruise Port Day"
+    blog_type: "how-to"
+    content_type: "cluster"
+    cluster_id: "tc_diy_excursions"
+    target_keywords:
+      - "cruise budget tips save money"
+      - "cruise port day budget"
+      - "how much to spend cruise port"
+    target_features:
+      - "feat_budget_intelligence"
+      - "feat_expense_tracker"
+    unique_angle: "Provides a real budget template by port type (expensive cities vs budget-friendly ports) with actual cost ranges — not vague 'set a budget' advice"
+    priority: "low"
+    priority_reason: "Supporting the DIY cluster — helps readers who've decided to go DIY figure out costs"
+    status: "planned"
+    estimated_word_count: 1800
+    eeat_plan: "€85 avg savings stat, real per-port budget examples"
+    serp_analyzed: false
+    cannibalization_check: "passed"
+    notes: ""
+    depends_on: ["q_002"]
+    internal_link_targets: ["diy-cruise-shore-excursions", "diy-vs-ship-excursion", "skip-ship-excursions-save-money"]
+
+  - id: "q_014"
+    title: "What to Pack for a Cruise Port Day"
+    blog_type: "listicle"
+    content_type: "cluster"
+    cluster_id: "tc_port_day_planning"
+    target_keywords:
+      - "cruise packing list by port"
+      - "what to bring cruise port day"
+      - "cruise port day essentials"
+    target_features:
+      - "feat_ai_packing_list"
+    unique_angle: "Packing list that adapts by port type (beach port, city port, cultural port) and activity — generated using the same AI logic as the app's packing feature"
+    priority: "low"
+    priority_reason: "Good for informational traffic and demonstrates the AI packing list feature"
+    status: "planned"
+    estimated_word_count: 1600
+    eeat_plan: "Highlight that list is generated from real planned activities — not a generic travel checklist"
+    serp_analyzed: false
+    cannibalization_check: "passed"
+    notes: ""
+    depends_on: []
+    internal_link_targets: ["cruise-port-day-planning", "how-to-plan-cruise-port-day"]
