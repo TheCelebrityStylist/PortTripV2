@@ -1,0 +1,15 @@
+name = "porttrip-crawler-prerender"
+main = "src/index.ts"
+compatibility_date = "2026-08-10"
+
+[browser]
+binding = "BROWSER"
+
+# IMPORTANT: deploy this as a Worker Route in front of the existing Base44 origin,
+# NOT as a Custom Domain origin replacement. With a Worker Route, fetch(request)
+# continues to the existing origin for normal visitors and prerender bypass requests.
+# Uncomment after confirming the zone is porttrip.com in the target Cloudflare account.
+# routes = [
+#   { pattern = "porttrip.com/*", zone_name = "porttrip.com" },
+#   { pattern = "www.porttrip.com/*", zone_name = "porttrip.com" }
+# ]
